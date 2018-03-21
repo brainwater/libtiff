@@ -747,7 +747,7 @@ int main(int argc, char** argv){
 	/*
 	 * Input
 	 */
-	if(argc > optind) {
+	if(argv && (argc > optind)) {
 		input = TIFFOpen(argv[optind++], "r");
 		if (input==NULL) {
 			TIFFError(TIFF2PDF_MODULE, 
