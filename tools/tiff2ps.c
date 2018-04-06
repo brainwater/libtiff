@@ -21,7 +21,7 @@
  * OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS,
  * WHETHER OR NOT ADVISED OF THE POSSIBILITY OF DAMAGE, AND ON ANY THEORY OF 
  * LIABILITY, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE 
- * OF THIS SOFTWARE.
+ * OF THIS SOFTWARE. blargblarg
  */
 
 #include "tif_config.h"
@@ -2962,11 +2962,9 @@ tsize_t Ascii85EncodeBlock( uint8 * ascii85_p, unsigned f_eod, const uint8 * raw
             val32 += *(++raw_p) <<  8;
             val32 += *(++raw_p);
     
-            if ( val32 == 0 )                   /* Special case */
+            if ( ascii85_p && (val32 == 0 ))                   /* Special case */
             {
-                if(ascii85_p != NULL) {
-                    ascii85_p[ascii85_l] = 'z';
-                }
+                ascii85_p[ascii85_l] = 'z';
                 rc = 1;
             }
     
