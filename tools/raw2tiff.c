@@ -255,7 +255,6 @@ main(int argc, char* argv[])
 	case COMPRESSION_JPEG:
 		if (photometric == PHOTOMETRIC_RGB
 		    && jpegcolormode == JPEGCOLORMODE_RGB)
-			photometric = PHOTOMETRIC_YCBCR;
 		TIFFSetField(out, TIFFTAG_JPEGQUALITY, quality);
 		TIFFSetField(out, TIFFTAG_JPEGCOLORMODE, jpegcolormode);
 		break;
