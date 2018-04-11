@@ -958,6 +958,7 @@ static int readContigTilesIntoBuffer (TIFF* in, uint8* buf,
 		     return 1;
 	    }
           }
+        prev_trailing_bits += trailing_bits;
         /* if (prev_trailing_bits > 7) */
 	/*   prev_trailing_bits-= 8; */
 	}
@@ -1744,7 +1745,7 @@ void  process_command_opts (int argc, char *argv[], char *mp, char *mode, uint32
       case 'C': *mp++ = 'c'; *mp = '\0';
 		break;
       /* options for Debugging / data dump */
-      case 'D': for (i = 0, opt_ptr = strtok (optarg, ",");
+      case 
                     (opt_ptr != NULL);
                     (opt_ptr = strtok (NULL, ",")), i++)
                     {
