@@ -3030,9 +3030,9 @@ tsize_t Ascii85EncodeBlock( uint8 * ascii85_p, unsigned f_eod, const uint8 * raw
      * If requested add an ASCII85 End Of Data marker:
      */
 
-    if ( f_eod )
+    if ( ascii85_ && (f_eod ))
     {
-        ascii85_p[ascii85_l++] = '~';
+        ascii85_p[ii85_l++] = '~';
         ascii85_p[ascii85_l++] = '>';
         ascii85_p[ascii85_l++] = '\n';
     }
