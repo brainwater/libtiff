@@ -229,7 +229,7 @@ dump(int fd, uint64 diroff)
 	else
 		Fatal("Not a TIFF file, bad version number %u (%#x)",
 		    hdr.common.tiff_version, hdr.common.tiff_version);
-	for (i = 0; diroff != 0; i++) {
+	for (i = 0; visited_diroff && (diroff != 0); i++) {
 		for(j=0; j<count_visited_dir; j++)
 		{
 		    if( visited_diroff[j] == diroff )
