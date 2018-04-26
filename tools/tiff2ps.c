@@ -2964,7 +2964,9 @@ tsize_t Ascii85EncodeBlock( uint8 * ascii85_p, unsigned f_eod, const uint8 * raw
     
             if ( val32 == 0 )                   /* Special case */
             {
-                ascii85_p[ascii85_l] = 'z';
+                if(ascii85_p != NULL) {
+                    ascii85_p[ascii85_l] = 'z';
+                }
                 rc = 1;
             }
     
