@@ -958,6 +958,7 @@ static int readContigTilesIntoBuffer (TIFF* in, uint8* buf,
 		     return 1;
 	    }
           }
+        prev_trailing_bits += trailing_bits;
         /* if (prev_trailing_bits > 7) */
 	/*   prev_trailing_bits-= 8; */
 	}
@@ -2809,7 +2810,6 @@ extractContigSamples8bits (uint8 *in, uint8 *out, uint32 cols,
   
   ready_bits = 0;
   maskbits =  (uint8)-1 >> ( 8 - bps);
-  buff1 = buff2 = 0;
   for (col = start; col < end; col++)
     {    /* Compute src byte(s) and bits within byte(s) */
     bit_offset = col * bps * spp;
